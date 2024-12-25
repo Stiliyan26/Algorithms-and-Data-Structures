@@ -1,5 +1,13 @@
 from typing import List
 
+def getConcatenation_V3(nums: List[int], n: int) -> List[int]:
+  ans = []
+  
+  for _ in range(n):
+    ans += nums
+  
+  return ans;
+
 def getConcatenation_V2(nums: List[int]) -> List[int]:
   ans = []
   
@@ -19,8 +27,17 @@ def getConcatenation(nums: List[int]) -> List[int]:
     
   return ans
 
+# Best case
+def getConcatenation_WithN(nums: List[int], n: int) -> List[int]:
+  ans = []
+  
+  for _ in range(n):
+    for n in nums:
+      ans.append(n)
+    
+  return ans
 
 nums = [1, 2, 1]
-result = getConcatenation_V2(nums)
+result = getConcatenation_V3(nums, 3)
 
 print(result)
