@@ -11,7 +11,7 @@ def isValid_Stack(str: str) -> bool:
     else:
       stack.append(c);
   
-  return len(stack) == 0;
+  return True if not stack else False;
 
 def isValid_BruteForse(str: str) -> bool:
   while True:
