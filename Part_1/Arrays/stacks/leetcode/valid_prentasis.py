@@ -4,7 +4,7 @@ def isValid_Stack(str: str) -> bool:
   
   for c in str:
     if c in closeToOpen:
-      if stack.count != 0 and stack[-1] == closeToOpen[c]:
+      if stack and stack[-1] == closeToOpen[c]:
         stack.pop()
       else:
         return False
