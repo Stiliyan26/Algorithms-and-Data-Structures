@@ -3,7 +3,7 @@
 #include <stack>
 #include <unordered_map>
 
-bool isValid(std::string &stringOfPrentasis)
+bool isValid_Stack(std::string &stringOfPrentasis)
 {
   std::stack<char> stack;
   std::unordered_map<char, char> closeToOpen = {
@@ -33,7 +33,7 @@ bool isValid(std::string &stringOfPrentasis)
   return stack.empty();
 }
 
-bool isValid_2(std::string &s)
+bool isValid_BruteForse(std::string &s)
 {
   while (true) {
     std::size_t pos = std::string::npos;
@@ -67,7 +67,7 @@ int main()
   // std::string brackets = "([)]]{}";
   // std::string brackets = "(){}}{";
 
-  std::cout << std::boolalpha << isValid_2(brackets) << std::endl;
+  std::cout << std::boolalpha << isValid_Stack(brackets) << std::endl;
 
   return 0;
 }
