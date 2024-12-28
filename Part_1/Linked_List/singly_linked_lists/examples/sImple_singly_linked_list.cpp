@@ -56,7 +56,10 @@ public:
         tail = curr;
       }
       
+      ListNode* nodeToRemove = curr->next;
       curr->next = curr->next->next;
+
+      delete nodeToRemove;
     }
   }
 
