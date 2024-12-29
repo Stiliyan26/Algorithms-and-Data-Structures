@@ -34,7 +34,7 @@ public:
       currentNode = currentNode->next;
     }
 
-    if (currentNode == nullptr) return -1; // Index out of bounds or list is empty
+    if (currentNode == nullptr) return -1; 
 
     return currentNode->val;
   }
@@ -45,7 +45,6 @@ public:
     newNode->next = head->next;
     head->next = newNode;
 
-    // If list was empty before insertion
     if (newNode->next == nullptr) {
       tail = newNode;
     }

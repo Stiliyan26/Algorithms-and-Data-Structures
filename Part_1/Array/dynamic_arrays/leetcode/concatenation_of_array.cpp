@@ -14,7 +14,19 @@ std::vector<int> getConcatenation(std::vector<int> &nums)
   return ans;
 }
 
-std::vector<int> &getConcatenationRefrence(std::vector<int> &nums)
+void getConcatenationBest(const std::vector<int> &nums, std::vector<int>& ans)
+{
+  ans.resize(2 * nums.size(), 0);
+
+  for (size_t i = 0; i < nums.size(); i++)
+  {
+    ans[i] = nums[i];
+    ans[i + nums.size()] = nums[i];
+  }
+}
+
+
+std::vector<int>& getConcatenationRefrence(std::vector<int> &nums)
 {
   std::vector<int> *ans = new std::vector<int>(nums.size() * 2);
 
@@ -27,7 +39,7 @@ std::vector<int> &getConcatenationRefrence(std::vector<int> &nums)
   return *ans;
 }
 
-std::vector<int> &getConcatenationNTimesRefrence(std::vector<int> &nums, int n)
+std::vector<int>& getConcatenationNTimesRefrence(std::vector<int> &nums, int n)
 {
   std::vector<int> *ans = new std::vector<int>;
   ans->reserve(nums.size() * n);
